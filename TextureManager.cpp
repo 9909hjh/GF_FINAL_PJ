@@ -54,3 +54,33 @@ SDL_Renderer *pRenderer, SDL_RendererFlip flip)
 
   SDL_RenderCopyEx(pRenderer, m_textureMap[id], &srcRect, &destRect, rotationAngle, NULL, flip);
 }
+
+int TextureManager::TTFdraw(const char* id, int x, int y, int width, int height, SDL_Renderer* pRenderer)
+{
+    SDL_Rect srcRect;
+    SDL_Rect destRect;
+
+    srcRect.x = 0;
+    srcRect.y = 0;
+    srcRect.w = destRect.w = width;
+    srcRect.h = destRect.h = height;
+    destRect.x = x;
+    destRect.y = y;
+
+    if (TTF_Init() < 0) { printf("오류: 폰트를 초기화할 수 없습니다. (%s)\n", TTF_GetError()); return false; }
+    TTF_Font* font = TTF_OpenFont("res/cocogoose.ttf", 16);
+    if (font == NULL)
+    {
+        printf("Could not open font! (%s)\n", TTF_GetError());
+        return -1;
+    }
+
+    SDL_Color color = { 255, 0, 255, SDL_ALPHA_OPAQUE };
+    SDL_Surface* surface = TTF_RenderText_Blended(font, id, color);
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(pRenderer, surface);
+
+    SDL_FreeSurface(surface);
+
+    SDL_RenderCopy(pRenderer, texture, &srcRect, &destRect);
+
+}

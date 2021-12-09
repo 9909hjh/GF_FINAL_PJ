@@ -33,7 +33,6 @@ public:
     }
 
 
-
     static Game* Instance() {
         if (s_pInstance == 0) {
             s_pInstance = new Game();

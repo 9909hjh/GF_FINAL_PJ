@@ -2,6 +2,7 @@
 #include "SDL.h"
 #include "map"
 #include <string>
+#include "SDL_ttf.h"
 
 
 class TextureManager {
@@ -15,6 +16,8 @@ public:
     //rotationAngle
     void drawFrame(std::string id, int x, int y, int width, int height, float rotationAngle, int currentRow, int currenFrame,
         SDL_Renderer* pRenderer, SDL_RendererFlip flip = SDL_FLIP_NONE);
+
+    int TTFdraw(const char* id, int x, int y, int width, int height, SDL_Renderer* pRenderer);
 
     static TextureManager* Instance()
     {
@@ -30,6 +33,8 @@ public:
     }
 
 private:
+    
+
     TextureManager() {}
     static TextureManager* s_pInstance;
     std::map<std::string, SDL_Texture*> m_textureMap;
