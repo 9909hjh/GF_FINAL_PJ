@@ -17,7 +17,7 @@ public:
     void drawFrame(std::string id, int x, int y, int width, int height, float rotationAngle, int currentRow, int currenFrame,
         SDL_Renderer* pRenderer, SDL_RendererFlip flip = SDL_FLIP_NONE);
 
-    int TTFdraw(const char* id, int x, int y, int width, int height, SDL_Renderer* pRenderer);
+    int TTF_drawFont(const char* id, int x, int y, int width, int height, SDL_Renderer* pRenderer);
 
     static TextureManager* Instance()
     {

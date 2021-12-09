@@ -55,7 +55,7 @@ SDL_Renderer *pRenderer, SDL_RendererFlip flip)
   SDL_RenderCopyEx(pRenderer, m_textureMap[id], &srcRect, &destRect, rotationAngle, NULL, flip);
 }
 
-int TextureManager::TTFdraw(const char* id, int x, int y, int width, int height, SDL_Renderer* pRenderer)
+int TextureManager::TTF_drawFont(const char* id, int x, int y, int width, int height, SDL_Renderer* pRenderer)
 {
     SDL_Rect srcRect;
     SDL_Rect destRect;
@@ -75,7 +75,7 @@ int TextureManager::TTFdraw(const char* id, int x, int y, int width, int height,
         return -1;
     }
 
-    SDL_Color color = { 255, 0, 255, SDL_ALPHA_OPAQUE };
+    SDL_Color color = { 255, 255, 255 };
     SDL_Surface* surface = TTF_RenderText_Blended(font, id, color);
     SDL_Texture* texture = SDL_CreateTextureFromSurface(pRenderer, surface);
 
