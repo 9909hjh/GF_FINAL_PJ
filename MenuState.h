@@ -26,8 +26,6 @@ private:
 	static void s_exitFromMenu();
 
 	Mix_Music* Startbgm;
-	TTF_Font* font32;
-	SDL_Color color = { 0, 0, 0 };
 
 	MenuState() {};
 	static MenuState* s_pInstance;

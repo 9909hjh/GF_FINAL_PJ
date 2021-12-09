@@ -21,8 +21,8 @@ void MenuState::update()
 
 void MenuState::render()
 {
-	TheTextureManager::Instance()->TTF_drawFont("The control keys are above the arrow keys, left, and right.", 200, 500, 700, 30, TheGame::Instance()->getRenderer());
-
+	TheTextureManager::Instance()->TTF_drawFont("The control keys are above the arrow keys, left, and right.", 150, 500, 700, 30, TheGame::Instance()->getRenderer());
+	TheTextureManager::Instance()->TTF_drawFont("made by 20181289_HAN JU-HYEONG", 300, 700, 400, 30, TheGame::Instance()->getRenderer());
 	for (int i = 0; i < m_gameObjects.size(); i++) {
 		m_gameObjects[i]->draw();
 	}
