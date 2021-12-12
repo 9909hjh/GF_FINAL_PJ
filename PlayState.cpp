@@ -50,12 +50,11 @@ void PlayState::render()
 
 bool PlayState::onEnter()
 {
+	// 오디오 출력을 위한 변수
 	Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
 	bgm = Mix_LoadMUS("res/bgm.mp3");
-	Mix_VolumeMusic(5);
+	Mix_VolumeMusic(5); // 오디오 볼륨을 5로 설정.
 	Mix_PlayMusic(bgm, -1);
-
-	
 
 
 	if (!TheTextureManager::Instance()->load("Assets/alpha-Player.png", "Player", 
@@ -96,7 +95,7 @@ bool PlayState::onEnter()
 	m_tile.push_back(Xtrap); // X move
 	m_tile.push_back(Ytrap); // Y move
 	m_tile.push_back(ctrap); // cross move
-	m_tile.push_back(Ttrap); // player target move / if timer over now...
+	m_tile.push_back(Ttrap); // 마우스를 쫒아가는 타깃트렙부분 (이부분은 딜레이를 통해 시간이 지나야 마우스를 따라가게 만들었습니다.)
 
 	m_gameObjects.push_back(player);
 	
@@ -118,6 +117,7 @@ bool PlayState::onExit()
 
 	m_gameObjects.clear();
 	m_tile.clear();
+
 	Mix_FreeMusic(bgm);
 
 	TheTextureManager::Instance()->clearFromTextureMap("Player");

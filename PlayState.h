@@ -30,11 +30,11 @@ private:
 	PlayState() {};
 	static PlayState* s_pInstance;
 
-    std::vector<GameObject*> m_tile;
+    std::vector<GameObject*> m_tile; // 타일을 따로 둬서 gameobject의 부담을 줄이기 위함.
 
-    Mix_Music* bgm;
-    
+    Mix_Music* bgm; // 오디오 출력부분.
 
+    // 맵을 구성하는 2차원 배열 변수 입니다.
     int map[19][19] =
     { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
         1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,

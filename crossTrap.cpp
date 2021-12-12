@@ -9,6 +9,7 @@ void crossTrap::draw()
 
 void crossTrap::update()
 {
+	// 벽을 튕겨 돌아다니는 함정 부분입니다.
 	if (m_position.getX() <= 100)
 	{
 		m_velocity.setX(10);

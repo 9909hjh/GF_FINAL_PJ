@@ -9,7 +9,7 @@ void YTrap::draw()
 
 void YTrap::update()
 {
-	if (m_position.getY() <= 200)
+	if (m_position.getY() <= 200) // 세로로 움직이는 함정입니다.
 	{
 		m_velocity.setY(10);
 	}

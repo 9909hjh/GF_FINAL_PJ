@@ -9,7 +9,7 @@ MenuButton::MenuButton(const LoaderParams* pParams,
 
 void MenuButton::draw()
 {
-	SDLGameObject::draw(); // use the base class drawing
+	SDLGameObject::draw(); // 다른 클래스에서의 draw와 같은 역할
 }
 
 void MenuButton::clean()
@@ -30,7 +30,7 @@ void MenuButton::update()
 			&& m_bReleased)
 		{
 			m_currentFrame = CLICKED;
-			m_callback(); // call our callback function
+			m_callback(); // callback 함수를 호출합니다. 이함수가 없으면 버튼을 눌러도 상태가 바뀌지 않습니다.
 			m_bReleased = false;
 		}
 		else if (!TheInputHandler::Instance()->getMouseButtonState(LEFT))

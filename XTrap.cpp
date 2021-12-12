@@ -9,7 +9,7 @@ void XTrap::draw()
 
 void XTrap::update()
 {
-	if (m_position.getX() <= 400)
+	if (m_position.getX() <= 400) // 가로로 웁직이는 함정입니다.
 	{
 		m_velocity.setX(10);
 	}

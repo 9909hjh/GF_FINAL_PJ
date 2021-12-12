@@ -36,15 +36,7 @@ bool MenuState::onEnter()
 	Mix_VolumeMusic(5);
 	Mix_PlayMusic(Startbgm, -1);
 
-	//font32 = TTF_OpenFont("res/cocogoose.ttf", 32);
-
-	/*if (font32 == NULL)
-	{
-		printf("Could not open font! (%s)\n", TTF_GetError());
-		return -1;
-	}*/
 	
-
 	if (!TheTextureManager::Instance()->load("Assets/button.png", "playbutton",
 		TheGame::Instance()->getRenderer()))
 	{
@@ -63,8 +55,6 @@ bool MenuState::onEnter()
 	GameObject* button2 = new MenuButton(
 		new LoaderParams(450, 300, 128, 128, "exitbutton"),
 		s_exitFromMenu);
-
-	//SDL_Surface* surface = TTF_RenderText_Blended(font32, "Test String", color);
 
 	m_gameObjects.push_back(button1);
 	m_gameObjects.push_back(button2);

@@ -22,8 +22,8 @@ public:
 
 
 private:
-	static void s_pauseToMain();
-	static void s_resumePlay();
+	static void s_pauseToMain(); // 정지상태에서 메인버튼을 눌렀을때.
+	static void s_resumePlay(); // 정지상태에서 다시 시작버튼을 눌렀을때.
 	static const std::string s_pauseID;
 
 	PauseState() {};

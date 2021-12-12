@@ -17,7 +17,4 @@ private:
 	bool isJump = false; //점프가 가능한지 판별
 	float verticalVel;
 	int JumpForce = 20; // 점프 높이.
-
-	bool isFire;
-
 };

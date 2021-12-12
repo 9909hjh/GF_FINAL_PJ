@@ -85,12 +85,12 @@ void Player::handleInput()
   {
       TheCamera::Instance()->getCameraRectY(CAMERA_Y);
   }
-
+  // 카메라를 통해서 타일이 화면에 벨런스있게 보여주었습니다.
 }
 
 void Player::checkColl()
 {
-  std::vector<GameObject*> collwall = PlayState::Instance()->getTile(); //
+  std::vector<GameObject*> collwall = PlayState::Instance()->getTile(); 
 
   int plrLeft = m_position.getX();
   int plrRight = plrLeft + m_width;
@@ -109,19 +109,19 @@ void Player::checkColl()
       
       if(m_velocity.getY() > 0 && plrBottom >= objectTop && plrBottom < objectBottom && plrLeft != objectRight && plrRight != objectLeft)
       {
-       
+       // 아랫부분
         m_position.setY(objectTop - m_height);
         plrTop = m_position.getY();
         plrBottom = plrTop + m_height;
 
         m_velocity.setY(0);
         m_acceleration.setY(0.0);
-        
+        // 이것에 관련된 콜라이더 부분에 닿으면 게임오버 상태로 갑니다.
         TheGame::Instance()->getStateMachine()->changeState(GameOverState::Instance());
       }
       else if(m_velocity.getY() < 0 && plrTop <= objectBottom && plrTop > objectTop && plrLeft != objectRight && plrRight != objectLeft)
       {
-        
+        // 윗부분.
         m_position.setY(objectBottom);
         plrTop = m_position.getY();
         plrBottom = plrTop + m_height;
@@ -132,7 +132,7 @@ void Player::checkColl()
       
       if(m_velocity.getX() < 0 && plrLeft <= objectRight && plrLeft > objectLeft && plrTop != objectBottom && plrBottom != objectTop)
       {
-         
+         // 왼쪽부분
         m_position.setX(objectRight);
 
         m_velocity.setX(0);
@@ -140,7 +140,7 @@ void Player::checkColl()
       } 
       else if(m_velocity.getX() > 0 && plrRight >= objectLeft && plrRight < objectRight && plrTop != objectBottom && plrBottom != objectTop)
       {
-        
+        // 오른쪽부분
         m_position.setX(objectLeft - m_width);
 
         m_velocity.setX(0);

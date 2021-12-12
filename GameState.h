@@ -4,6 +4,7 @@
 
 class GameObject;
 
+// 추상클래스
 class GameState
 {
 public:
@@ -16,4 +17,5 @@ public:
 
 protected:
 	std::vector<GameObject*> m_gameObjects;
+	// 오브잭트를 저장할 백터 변수입니다.
 };

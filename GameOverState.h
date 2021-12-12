@@ -24,10 +24,10 @@ public:
 
 private:
 	static const std::string s_gameOverID;
-	static void s_gameOverToMain();
-	static void s_restartPlay();
+	static void s_gameOverToMain(); // 게임오버를한 상태에서 메인버튼을 눌렀을때.
+	static void s_restartPlay(); // 오버상태에서 리스타트 버튼을 눌렀을때.
 
-	Mix_Music* overbgm;
+	Mix_Music* overbgm; // 오버상태의 오디오출력 변수
 
 	GameOverState() {};
 	static GameOverState* s_pInstance;

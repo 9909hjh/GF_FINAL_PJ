@@ -25,7 +25,7 @@ public:
     bool running();
     void handleEvents();
     void clean();
-    void quit() { m_bRunning = false; }
+    void quit() { m_bRunning = false; } // 게임 종류 함수
 
     GameStateMachine* getStateMachine()
     {

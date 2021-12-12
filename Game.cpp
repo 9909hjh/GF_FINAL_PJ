@@ -45,7 +45,7 @@ void Game::update()
 void Game::render()
 {
   SDL_RenderClear(m_pRenderer);
-
+  // 모든 상태에서 배경은 하나만 사용하기 때문에 조금이라도 효율을 높이기위해 game부분에서 처리하였습니다.
   TheTextureManager::Instance()->draw("backGR", 0, 0, 1080, 1080, 0, m_pRenderer, SDL_FLIP_NONE);
 
   m_pGameStateMachine->render();
